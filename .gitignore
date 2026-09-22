@@ -47,6 +47,13 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# Media & Video Recordings (Never pushed to GitHub)
+*.mp4
+*.webm
+*.mov
+*.avi
+/videos/
+
 # OS & Editor Artifacts
 .DS_Store
 Thumbs.db
