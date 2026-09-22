@@ -123,8 +123,8 @@ graph TD
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/tenantguard-nyc.git
-cd tenantguard-nyc
+git clone https://github.com/Laegend14/tenantguard.git
+cd tenantguard
 ```
 
 ### 2. Install Dependencies
