@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+:root {
+  /* Soft Lilac Light Mode */
+  --bg-main: #FAF8FF;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #F3EEFD;
+  --bg-surface-subtle: #ECE4FA;
+  --border-subtle: #E4D8F7;
+  --border-focus: #7C3AED;
+  
+  --primary-purple: #7C3AED;
+  --primary-purple-hover: #6D28D9;
+  --primary-purple-light: #DDD6FE;
+  
+  --text-primary: #170C2A;
+  --text-secondary: #62537B;
+  --text-muted: #8E7EA8;
+  
+  --badge-bg: #EDE9FE;
+  --badge-text: #5B21B6;
+  
+  --danger-bg: #FEE2E2;
+  --danger-text: #991B1B;
+  --danger-border: #FCA5A5;
+  
+  --success-bg: #DCFCE7;
+  --success-text: #166534;
+  --success-border: #86EFAC;
+}
+
+[data-theme="dark"], .dark {
+  /* Rich Deep Purple Dark Mode (NOT pure pitch black) */
+  --bg-main: #130C24;
+  --bg-surface: #1D1236;
+  --bg-surface-elevated: #271847;
+  --bg-surface-subtle: #311F58;
+  --border-subtle: #3B226B;
+  --border-focus: #A78BFA;
+  
+  --primary-purple: #8B5CF6;
+  --primary-purple-hover: #7C3AED;
+  --primary-purple-light: #2D1A54;
+  
+  --text-primary: #F5F2FC;
+  --text-secondary: #B5A5D3;
+  --text-muted: #7E6C9E;
+  
+  --badge-bg: #2C1952;
+  --badge-text: #C4B5FD;
+  
+  --danger-bg: #3E1616;
+  --danger-text: #FCA5A5;
+  --danger-border: #7F1D1D;
+  
+  --success-bg: #132E20;
+  --success-text: #86EFAC;
+  --success-border: #14532D;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  min-height: 100vh;
+}
+
+/* Custom Sleek Rounded Buttons (No glowing, no harsh square boxes, no circle buttons) */
+.btn-pill-primary {
+  background-color: var(--primary-purple);
+  color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 0.65rem 1.4rem;
+  font-weight: 600;
+  font-size: 0.925rem;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+.btn-pill-primary:hover {
+  background-color: var(--primary-purple-hover);
+  transform: translateY(-1px);
+}
+.btn-pill-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-pill-secondary {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  border-radius: 9999px;
+  padding: 0.65rem 1.4rem;
+  font-weight: 500;
+  font-size: 0.925rem;
+  border: 1px solid var(--border-subtle);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+.btn-pill-secondary:hover {
+  background-color: var(--bg-surface-subtle);
+  border-color: var(--primary-purple);
+  transform: translateY(-1px);
+}
+
+.btn-pill-outline {
+  background-color: transparent;
+  color: var(--primary-purple);
+  border-radius: 9999px;
+  padding: 0.65rem 1.4rem;
+  font-weight: 600;
+  font-size: 0.925rem;
+  border: 1.5px solid var(--primary-purple);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.btn-pill-outline:hover {
+  background-color: var(--bg-surface-elevated);
+}
+
+/* Card Surface */
+.card-surface {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-purple);
+}
