@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en" suppressHydrationWarning>
+      <html lang="en" data-theme="light" suppressHydrationWarning>
         <head>
           <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         </head>

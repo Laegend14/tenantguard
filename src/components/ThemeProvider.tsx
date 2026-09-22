@@ -10,12 +10,12 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: 'dark',
+  theme: 'light',
   toggleTheme: () => {},
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark');
+  const [theme, setTheme] = useState<Theme>('light');
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -30,9 +30,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         document.documentElement.classList.remove('dark');
       }
     } else {
-      // Default to dark mode (the signature deep purple experience)
-      document.documentElement.setAttribute('data-theme', 'dark');
-      document.documentElement.classList.add('dark');
+      // Default to light mode
+      document.documentElement.setAttribute('data-theme', 'light');
+      document.documentElement.classList.remove('dark');
     }
   }, []);
 
@@ -48,9 +48,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  // Render children immediately to avoid hydration flash, applying dark as initial attribute
+  // Render children immediately to avoid hydration flash, applying light as initial attribute
   return (
-    <ThemeContext.Provider value={{ theme: mounted ? theme : 'dark', toggleTheme }}>
+    <ThemeContext.Provider value={{ theme: mounted ? theme : 'light', toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
